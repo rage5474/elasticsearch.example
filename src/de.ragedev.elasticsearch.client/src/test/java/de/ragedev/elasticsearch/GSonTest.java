@@ -8,12 +8,11 @@ import com.google.gson.Gson;
 
 public class GSonTest {
 	@Test
-	public void testName() throws Exception {
-		REvent rEvent = new REvent("X","Y");
+	public void simpleProtocolTest() throws Exception {
+		REvent rEvent = new REvent(1, 1000, "MyEvent", "cpu.system");
 		String json = new Gson().toJson(rEvent);
-		System.out.println(json);
 		REvent fromJson = new Gson().fromJson(json, REvent.class);
-		
+
 		assertEquals(rEvent.toString(), fromJson.toString());
 	}
 }

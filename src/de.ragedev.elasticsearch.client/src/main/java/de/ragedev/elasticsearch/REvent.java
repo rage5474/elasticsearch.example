@@ -1,18 +1,12 @@
 package de.ragedev.elasticsearch;
 
-class REvent {
-	private String name;
-	private String source;
+import lombok.Value;
 
-	public REvent(String name, String source) {
-		this.name = name;
-		this.source = source;
-	}
+@Value
+public final class REvent {
 
-	@Override
-	public String toString() {
-		return "REvent [name=" + name + ", source=" + source + "]";
-	}
-	
-	
+	private long id;
+	private long timestamp;
+	private String value;
+	private String channel;
 }
